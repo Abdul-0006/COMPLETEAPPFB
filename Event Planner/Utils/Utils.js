@@ -1,9 +1,14 @@
  
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
-  import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+  import { getAuth , 
+    onAuthStateChanged ,
+    createUserWithEmailAndPassword,
+    signOut,
+  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
   import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-  import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+  import { getFirestore, doc, setDoc,getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+  import { getStorage , ref , uploadBytes, getDownloadURL, } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
   
  
   
@@ -26,4 +31,15 @@
   const analytics = getAnalytics(app);
   console.log("auth=>",auth)
 
-  export { auth, db , storage }
+  export { auth,
+           db ,
+           storage ,
+           onAuthStateChanged ,
+           createUserWithEmailAndPassword ,
+           doc,
+           setDoc,
+           ref,
+           uploadBytes, 
+           getDownloadURL,
+          signOut,
+          getDoc,};
